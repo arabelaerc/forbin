@@ -1,0 +1,138 @@
+@use 'global' as *;
+
+.swiper {
+	height: 100%;
+
+	.swiper-slide {
+		height: initial;
+	}
+}
+
+.swiper--container {
+	padding: 8px 16px;
+
+	@include responsive-width($tablet-m) {
+		padding: 8px;
+	}
+}
+
+.swiper-pagination {
+	width: 100%;
+	position: absolute;
+	bottom: 40px !important;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+	&-bullet {
+		opacity: 1;
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		margin: 0 4px !important;
+		background-color: transparent;
+		border: 1px solid #285BEA;
+	}
+
+	&-bullet-active {
+		width: 12px;
+		height: 12px;
+		background-color: #285BEA;
+	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	top: 0;
+	z-index: 2;
+	height: 100%;
+	cursor: pointer;
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+	width: unset;
+	margin-top: unset;
+
+	&::after {
+		top: 0;
+		margin-top: 0;
+		content: '';
+		width: 54px;
+		height: 54px;
+		border-radius: 100%;
+		border: 1px solid #000;
+		background-color: #fff;
+
+		display: flex;
+		line-height: 0;
+		align-items: center;
+		justify-content: center;
+		content: image-url('icons/icon-arrow-swiper.svg');
+	}
+
+	&.swiper-button-disabled {
+		opacity: .2;
+
+		&::after {
+			pointer-events: all !important;
+			border: 2px solid #CACACA;
+			background-color: transparent;
+			// content: image-url('components/icon-arrow-disabled-slider.svg');
+		}
+	}
+
+	&[state='hidden'] {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.swiper-button-prev {
+	left: 0;
+	right: auto;
+	justify-content: end;
+
+}
+
+.swiper-button-next {
+	right: 0;
+	left: auto;
+
+	&::after {
+		transform: scaleX(-1);
+	}
+
+}
+
+.swiper-button-prev.--alternative,
+.swiper-button-next.--alternative {
+
+	&::after {
+		width: 18px;
+		height: 18px;
+		border: none;
+		border-radius: initial;
+		background-color: initial;
+		// content: image-url('components/icon-arrow-prev-alternative.svg');
+	}
+}
+
+.swiper-lazy {
+	opacity: 0;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+
+	&.swiper-lazy-loaded {
+		opacity: 1;
+	}
+
+	&-preloader {
+		border-width: 3px;
+		border-color: rgba(#000, 0.2);
+		border-left-color: rgba(#000, 0.5);
+	}
+}

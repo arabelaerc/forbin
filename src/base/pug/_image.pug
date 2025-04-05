@@ -1,0 +1,43 @@
+mixin image_retina(options)
+	-
+		image = (options && options.image) ? options.image : ''
+		ext = (options && options.ext) ? options.ext : ''
+		alt = (options && options.alt) ? options.alt : ''
+
+	picture&attributes(attributes)
+		if ext !== 'svg'
+			source(
+				srcset= `${img_path + image}.${ext} 1x, ${img_path + image}@2x.${ext} 2x`
+				type= `image/${ext}`
+			)
+		img(
+			src= `${img_path + image}.${ext}`
+			alt= alt
+		)
+
+
+mixin image_retina_media(options)
+	-
+		image = (options && options.image) ? options.image : ''
+		ext = (options && options.ext) ? options.ext : ''
+		alt = (options && options.alt) ? options.alt : ''
+		media = (options && options.media) ? options.media : '1024'
+
+	picture&attributes(attributes)
+
+		if ext !== 'svg'
+			source(
+				srcset= `${img_path + image}-desk.${ext} 1x, ${img_path + image}-desk@2x.${ext} 2x`
+				media=`(min-width: ${media}px)`
+				type= `image/${ext}`
+			)
+
+			source(
+				srcset= `${img_path + image}-mob.${ext} 1x, ${img_path + image}-mob@2x.${ext} 2x`
+				type= `image/${ext}`
+			)
+
+		img(
+			src= `${img_path + image}-mob.${ext}`
+			alt= alt
+		)

@@ -1,0 +1,189 @@
+@use 'global' as *;
+
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+:focus {
+	outline: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-size: 14px;
+	min-width: 300px;
+	font-weight: 400;
+	line-height: 1.35;
+	position: relative;
+	text-size-adjust: 100%;
+	letter-spacing: 0.005em;
+	background-color: #f9f9f9;
+	font-family: $font-family-main;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	@include responsive-width ($laptop-s) {
+		font-size: 16px;
+		overflow-x: hidden;
+	}
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+p {
+	margin: 0 0 15px;
+	letter-spacing: 0.5px;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+strong,
+b {
+	font-weight: 600;
+	font-family: $font-family-main;
+}
+
+em {
+	font-style: italic;
+}
+
+picture {
+	display: inline-block;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+	list-style: none;
+}
+
+hr {
+	margin-left: auto;
+	margin-right: auto;
+
+	&.-clear {
+		border-color: transparent;
+	}
+
+	&.-large {
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+		@include responsive-width($tablet-s) {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+h1 {
+	$h1: 24px;
+	font-size: $h1;
+	font-weight: 600;
+	margin-bottom: 20px;
+
+	@include responsive-width($tablet-m) {
+		font-size: $h1 + 6;
+	}
+
+	@include responsive-width($laptop-m) {
+		font-size: $h1 + 30;
+	}
+}
+
+h2 {
+	$h2: 20px;
+	font-size: $h2;
+	font-weight: 600;
+	margin-bottom: 20px;
+
+	@include responsive-width($tablet-m) {
+		font-size: $h2 + 4;
+	}
+
+	@include responsive-width($laptop-m) {
+		font-size: $h2 + 10;
+	}
+}
+
+h3 {
+	$h3: 18px;
+	font-size: $h3;
+	font-weight: 600;
+	margin-bottom: 20px;
+
+	@include responsive-width($tablet-m) {
+		font-size: $h3 + 2;
+	}
+
+	@include responsive-width($laptop-m) {
+		font-size: $h3 + 2;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	color: #000;
+	line-height: 1.2;
+	font-weight: 400;
+	margin-bottom: 30px;
+	font-family: $font-family-main;
+
+	@include responsive-width($mobile-l) {
+		margin-bottom: 30px;
+	}
+}
+
+button {
+	margin: 0;
+	border: 0;
+    padding: 0;
+    width: auto;
+    font: inherit;
+	color: inherit;
+	cursor: pointer;
+    overflow: visible;
+	line-height: normal;
+	background: transparent;
+}
+
+.lazy__img {
+	display: inline-block;
+	vertical-align: top;
+
+	.lazy-js {
+		opacity: 0;
+		transition-property: all;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-in-out;
+
+		&.initial,
+		&.loaded,
+		&.error {
+			opacity: 1;
+		}
+	}
+}

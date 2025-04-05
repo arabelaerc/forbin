@@ -1,0 +1,89 @@
+.map {
+    padding: 30px 0;
+    overflow: hidden;
+
+    @media screen and (min-width: 1024px) {
+        padding: 70px 0;
+    }
+
+    .container {
+        padding-bottom: 21px;
+
+        @media screen and (min-width: 768px) {
+            padding-bottom: 70px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            
+            &:first-child {
+                display: grid;
+                grid-template-areas:
+                "icon heading"
+                "icon text";
+                justify-items: center;
+                grid-template-rows: 50px;
+                // padding: 0 160px 35px 160px;
+                max-width: 640px;
+            }
+        } 
+    }
+
+    svg {
+        display: none;
+
+        @media screen and (min-width: 1024px) {
+            display: block;
+            grid-area: icon;
+        }
+    }
+
+    h2 {
+        color: black;
+        font-size: 28px;
+        padding: 0 80px;
+        line-height: 100%;
+        font-weight: 600;
+        margin-bottom: 7px;
+        text-align: center;
+        
+        @media screen and (min-width: 1024px) {
+            padding: 0;
+            display: flex;
+            font-size: 40px;
+            grid-area: heading;
+        }
+    }
+
+    p {
+        padding: 0 50px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 100%;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            grid-area: text;
+        } 
+    }
+
+    &__buttons {
+        gap: 10px;
+        display: flex;
+        overflow-x: scroll;
+        justify-content: center;
+
+        button {
+            flex: 0 0 auto;
+            padding: 5px 12px;
+            border-radius: 10px;
+            transition: all ease .3s;
+            border: 0.29px solid black;
+
+            &:hover {
+                color: white;
+                background-color: #285BEA;
+                border: 0.29px solid #285BEA;
+            }
+        }
+    }
+}

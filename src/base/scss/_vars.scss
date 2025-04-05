@@ -1,0 +1,25 @@
+// Path font
+$path-font: '../../fonts/' !default;
+$path-image: '../../assets/img/' !default;
+
+$font-family-main: 'Barlow', sans-serif;
+$font-family-second: 'Metropolis';
+
+// Layout
+$container-desktop: 1660px;
+$container: 1180px;
+$container-laptop: 1074px;
+$container-laptop-s: 940px;
+$container-tablet-m: 730px;
+
+// Breakpoints
+$mobile-s: 320px;
+$mobile-m: 360px;
+$mobile-l: 450px;
+$tablet-s: 640px;
+$tablet-m: 768px;
+$tablet-l: 850px;
+$laptop-s: 1024px;
+$laptop-m: 1280px;
+$desktop-s: 1440px;
+$desktop-m: 1750px;

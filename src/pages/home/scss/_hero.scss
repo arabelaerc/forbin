@@ -1,0 +1,156 @@
+@use '../../../base/scss/global' as *;
+
+.hero {
+    position: relative;
+    // background-color: #edf1fd;
+
+    // .swiper-slide {
+    //     &:nth-child(1) {
+    //         .content {
+    //             @include responsive-width($laptop-s) {
+    //                 width: 600px;
+    //             }
+    //         }
+    //     }
+    //     &:nth-child(2) {
+    //         .slide__bg {
+    //             background-color: #ffe7e8;
+    //         }
+    //         .content {
+    //             @include responsive-width($laptop-s) {
+    //                 width: 730px;
+    //             }
+    //         }
+    //     }
+    //     &:nth-child(3) {
+    //         .content {
+    //             @include responsive-width($laptop-s) {
+    //                 width: 600px;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .swiper-slide .slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        @include responsive-width($laptop-s) {
+            height: 700px;
+        }
+    }
+
+    .slide__bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        // @include responsive-width($laptop-s) {
+        //     height: 800px;
+        // }
+    }
+
+    .slide__content {
+        // inset: 0;
+        // position: absolute;
+
+        .container {
+            height: 100%;
+            margin-top: 70px;
+            margin-bottom: 70px;
+
+            @include responsive-width($laptop-s) {
+                padding: 0 60px;
+                margin-bottom: 0;
+            }
+        }
+
+        .container .content {
+            display: flex;
+            // align-items: center;
+            flex-direction: column;
+
+            @include responsive-width($laptop-s) {
+                display: grid;
+                align-items: center;
+                grid-template-areas:
+                "heading picture"
+                "text picture";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 100px 100px;
+            }
+
+            @include responsive-width($desktop-s) {
+                grid-template-rows: 160px;
+            }          
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #285BEA;
+            margin-bottom: 7px;
+            grid-area: heading;
+
+            @include responsive-width($laptop-m) {
+                font-size: 50px;
+            }
+
+            @include responsive-width($desktop-s) {
+                font-size: 50px;
+            }
+        }
+
+        p {
+            color: #000;
+            grid-area: text;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 0;
+
+            @include responsive-width($laptop-m) {
+                font-size: 25px;
+            }
+
+            @include responsive-width($desktop-s) {
+                font-size: 3cqmax;
+            }
+        }
+
+        picture {
+            text-align: center;
+            grid-area: picture;
+        }
+    }
+
+    .swiper-pagination {
+        @include responsive-width($laptop-s) {
+            display: none;
+        }
+    }
+
+    .swiper__controls {
+        inset: 0;
+        position: absolute;
+        display: none;
+
+        @include responsive-width($laptop-s) {
+            display: block;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            z-index: 1;
+            position: absolute;
+        }
+
+        .swiper-button-prev {
+            left: -40px;
+        }
+        
+        .swiper-button-next {
+            right: -40px;
+        }
+    }
+}
