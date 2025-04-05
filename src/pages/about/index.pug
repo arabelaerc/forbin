@@ -3,9 +3,11 @@ include ../../base/pug/index
 
 -
 	title_page = 'About'
-	current_page = link.home
+	current_page = link.about
 
 
 +html_template()
 	main(role='main')
-		include ./pug/_planes
+		include ./pug/_headline
+		include ./pug/_cards
+		include ./pug/_values

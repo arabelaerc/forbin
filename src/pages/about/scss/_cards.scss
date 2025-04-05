@@ -1,0 +1,56 @@
+.cardsabout .container {
+    gap: 14px;
+    display: flex;
+    padding: 30px 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+        padding: 50px 0;
+        max-width: 720px;
+    }
+}
+
+.cardsabout__mision,
+.cardsabout__vision {
+    padding: 24px;
+    text-align: left;
+    border-radius: 20px;
+    background-color: #285BEA;
+}
+
+.cardsabout__vision {
+    background-color: #FF7B7B;
+}
+
+.cardsabout h3 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    padding: 0 10px;
+    font-weight: bold;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 40px;
+        // padding: 0 180px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        // padding: 0 160px;
+    }
+}
+
+.cardsabout p {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 11px;
+
+    // @media screen and (min-width: 1024px) {
+    //     font-size: 30px;
+    //     // padding: 0 130px;
+    //     text-align: center;
+    // }
+}
