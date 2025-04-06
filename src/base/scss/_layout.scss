@@ -2,30 +2,29 @@
 
 .container,
 .container-whole {
-	width: 100%;
 	margin: 0 auto;
-    max-width: 580px;
 	position: relative;
 
     @include responsive-width($tablet-s) {
         padding: 0;
+        width: 580px;
     }
 
 	@include responsive-width($tablet-m) {
-		max-width: 730px;
+		width: 730px;
 	}
 
 	@include responsive-width($laptop-s) {
-		max-width: 940px;
+		width: 940px;
 	}
 
 	@include responsive-width($laptop-m) {
-        max-width: 1140px;
+        width: 1140px;
     }
 
-    @include responsive-width($desktop-s) {
-        max-width: 1296px;
-    }
+    // @include responsive-width($desktop-s) {
+    //     max-width: 1296px;
+    // }
 }
 
 .container {

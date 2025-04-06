@@ -1,0 +1,111 @@
+@use '../../../base/scss/global'as *;
+
+.page__home {
+
+    .features {
+        padding: 36px 0;
+        background-color: #E2EAFF66;
+    
+        @include responsive-width($laptop_s) {
+            padding: 80px 0;
+        }
+    
+        .container {
+            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            @include responsive-width($tablet_m) {
+                max-width: 640px;
+            }
+    
+            @include responsive-width($laptop_s) {
+                gap: 41px;
+                max-width: 930px;
+            }
+            
+            @include responsive-width($laptop_m) {
+                max-width: 1060px;
+            }
+        }
+    
+        .card-feature {
+            height: 92px;
+            width: 160px;
+            display: flex;
+            border-radius: 20px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: white;
+            border: 0.29px solid black;
+
+            @include responsive-width($mobile_l) {
+                width: 174px;
+            }
+    
+            @include responsive-width($laptop_s) {
+                width: 281px;
+                height: 140px;
+            }
+
+            @include responsive-width($laptop_m) {
+                // width: 321px;
+                height: 160px;
+            }
+    
+            &:first-of-type {
+                gap: 10px;
+                padding: 0 7px;
+                flex-direction: row;
+    
+                @include responsive-width($laptop_s) {
+                    gap: 17px;
+                    padding: 0 21px;
+                }
+    
+                h2 {
+                    font-size: 26px;
+    
+                    @include responsive-width($laptop_s) {
+                        font-size: 50px;
+                    }
+                    
+                    // @include responsive-width($laptop_m) {
+                    //     font-size: 54px;
+                    // }
+                }
+            }
+    
+            h2 {
+                font-size: 20px;
+                color: #285BEA;
+                font-weight: 700;
+                margin-bottom: 0;
+        
+                @include responsive-width($laptop_s) {
+                    font-size: 28px;
+                }
+               
+                // @include responsive-width($laptop_m) {
+                //     font-size: 32px;
+                // }
+            }
+    
+            p {
+                margin-bottom: 0;
+        
+                @include responsive-width($laptop_s) {
+                    font-size: 20px;
+                    color: #285BEA;
+                }
+                
+                @include responsive-width($laptop_m) {
+                    font-size: 22px;
+                    color: #285BEA;
+                }
+            }
+        }
+    }
+}

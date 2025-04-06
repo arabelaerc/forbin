@@ -1,156 +1,176 @@
-@use '../../../base/scss/global' as *;
+@use '../../../base/scss/global'as *;
 
-.hero {
-    position: relative;
-    // background-color: #edf1fd;
+.page__home {
 
-    // .swiper-slide {
-    //     &:nth-child(1) {
-    //         .content {
-    //             @include responsive-width($laptop-s) {
-    //                 width: 600px;
-    //             }
-    //         }
-    //     }
-    //     &:nth-child(2) {
-    //         .slide__bg {
-    //             background-color: #ffe7e8;
-    //         }
-    //         .content {
-    //             @include responsive-width($laptop-s) {
-    //                 width: 730px;
-    //             }
-    //         }
-    //     }
-    //     &:nth-child(3) {
-    //         .content {
-    //             @include responsive-width($laptop-s) {
-    //                 width: 600px;
-    //             }
-    //         }
-    //     }
-    // }
+    .hero {
+        position: relative;
+        background-color: #edf1fd;
 
-    .swiper-slide .slide {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        @include responsive-width($laptop-s) {
-            height: 700px;
-        }
-    }
+        .swiper-slide {
+            &:nth-child(1) {
+                background: linear-gradient(145deg, rgba(238, 242, 253, 1) 0%, rgba(225, 232, 251, 1) 28%, rgba(225, 232, 251, 1) 42%, rgba(221, 229, 252, 1) 58%, rgba(221, 229, 252, 1) 84%, rgba(238, 242, 253, 1) 100%);
+            }
 
-    .slide__bg {
-        width: 100%;
-        height: 100%;
-        position: absolute;
+            &:nth-child(2) {
+                background: linear-gradient(145deg, rgba(255, 247, 248, 1) 0%, rgba(255, 241, 240, 1) 35%, rgba(255, 231, 231, 1) 67%, rgba(255, 216, 216, 1) 87%, rgba(255, 216, 216, 1) 100%);
+            }
 
-        // @include responsive-width($laptop-s) {
-        //     height: 800px;
-        // }
-    }
-
-    .slide__content {
-        // inset: 0;
-        // position: absolute;
-
-        .container {
-            height: 100%;
-            margin-top: 70px;
-            margin-bottom: 70px;
-
-            @include responsive-width($laptop-s) {
-                padding: 0 60px;
-                margin-bottom: 0;
+            &:nth-child(3) {
+                background: linear-gradient(145deg, rgba(238, 242, 253, 1) 0%, rgba(225, 232, 251, 1) 30%, rgba(225, 232, 251, 1) 42%, rgba(222, 230, 251, 1) 58%, rgba(222, 230, 251, 1) 84%, rgba(238, 242, 253, 1) 100%);
             }
         }
 
-        .container .content {
+        .swiper-slide .slide {
             display: flex;
-            // align-items: center;
-            flex-direction: column;
+            height: 490px;
+            align-items: center;
+            justify-content: center;
 
             @include responsive-width($laptop-s) {
-                display: grid;
-                align-items: center;
-                grid-template-areas:
-                "heading picture"
-                "text picture";
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 100px 100px;
-            }
-
-            @include responsive-width($desktop-s) {
-                grid-template-rows: 160px;
-            }          
-        }
-
-        h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #285BEA;
-            margin-bottom: 7px;
-            grid-area: heading;
-
-            @include responsive-width($laptop-m) {
-                font-size: 50px;
-            }
-
-            @include responsive-width($desktop-s) {
-                font-size: 50px;
+                height: 600px;
             }
         }
 
-        p {
-            color: #000;
-            grid-area: text;
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 0;
-
-            @include responsive-width($laptop-m) {
-                font-size: 25px;
-            }
-
-            @include responsive-width($desktop-s) {
-                font-size: 3cqmax;
-            }
-        }
-
-        picture {
-            text-align: center;
-            grid-area: picture;
-        }
-    }
-
-    .swiper-pagination {
-        @include responsive-width($laptop-s) {
-            display: none;
-        }
-    }
-
-    .swiper__controls {
-        inset: 0;
-        position: absolute;
-        display: none;
-
-        @include responsive-width($laptop-s) {
-            display: block;
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-            z-index: 1;
+        .slide__bg {
+            width: 100%;
+            height: 100%;
             position: absolute;
+
+            // @include responsive-width($laptop-s) {
+            //     height: 800px;
+            // }
         }
 
-        .swiper-button-prev {
-            left: -40px;
+        .slide__content {
+            height: 100%;
+            
+            .container {
+                height: 100%;
+            }
+
+            .content {
+                display: flex;
+                height: 100%;
+                padding-top: 50px;
+                flex-direction: column;
+
+                @include responsive-width($laptop-s) {
+                    padding: 0 60px;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                @include responsive-width($desktop-s) {
+                    grid-template-rows: 160px;
+                }
+
+                > div {
+
+                    @include responsive-width($laptop-s) {
+                        max-width: 630px;
+                    }
+
+                    @include responsive-width($laptop-m) {
+                        max-width: 700px;
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 28px;
+                font-weight: 600;
+                color: #285BEA;
+                margin-bottom: 7px;
+                grid-area: heading;
+                line-height: 1.1;
+
+                @include responsive-width($laptop-s) {
+                    font-size: 40px;
+                }
+
+                @include responsive-width($laptop-m) {
+                    font-size: 60px;
+                }
+
+                @include responsive-width($desktop-s) {
+                    font-size: 50px;
+                }
+            }
+
+            p {
+                color: #000;
+                grid-area: text;
+                font-size: 20px;
+                font-weight: 400;
+                margin-bottom: 0;
+                line-height: 1.2;
+
+                @include responsive-width($laptop-s) {
+                    font-size: 28px;
+                }
+
+                @include responsive-width($laptop-m) {
+                    font-size: 32px;
+                }
+            }
+
+            picture {
+                text-align: center;
+                grid-area: picture;
+                min-width: 200px;
+                min-height: 200px;
+
+                @include responsive-width($laptop-m) {
+                    min-width: 300px;
+                    min-height: 300px;
+                }
+            }
         }
-        
-        .swiper-button-next {
-            right: -40px;
+
+        .swiper-pagination {
+            @include responsive-width($laptop-s) {
+                display: none;
+            }
+        }
+
+        .swiper__controls {
+            inset: 0;
+            position: absolute;
+            display: none;
+
+            @include responsive-width($laptop-s) {
+                display: block;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                z-index: 1;
+                position: absolute;
+            }
+
+            .swiper-button-prev {
+                left: -20px;
+
+                @include responsive-width($laptop-m) {
+                    left: -40px;
+                }
+
+                @include responsive-width($desktop-s) {
+                    left: -60px;
+                }
+            }
+
+            .swiper-button-next {
+                right: -20px;
+
+                @include responsive-width($laptop-m) {
+                    right: -40px;
+                }
+
+                @include responsive-width($desktop-s) {
+                    right: -60px;
+                }
+            }
         }
     }
 }

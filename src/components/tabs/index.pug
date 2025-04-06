@@ -1,0 +1,18 @@
+div(class='tabs' _component='tabs')
+    div(class='tabs__options')
+        div
+            for tab, index in tabs 
+                button(class='tab' type='button' class=index==0 ? 'active' : '' _tab-id=(tab.id)) !{tab.title}
+
+    div(class='tabs__content')
+        for tab, index in tabs
+            div(class=index===0 ? 'active' : '' _tab-id=(tab.id))
+
+                if index === 0
+                    div(class='tabs__content-tab')
+                        div(class='container')
+                            div(class='headline')
+                                h2#titlePlansPersonas #[b En #[span(data-country-name) Canadá]], estos son los planes que tienen #[b beneficios Roaming].
+                                p#subtitlePlansPersonas Ubica tu plan y conoce lo que te brinda.
+
+                        div(class='container-whole')

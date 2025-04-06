@@ -1,0 +1,209 @@
+@use '../../../base/scss/global'as *;
+
+.page__products {
+
+	.products {
+		padding: 30px 0;
+
+		&__features {
+			display: flex;
+			justify-content: space-evenly;
+
+			@include responsive-width($laptop_s) {
+				margin-top: 50px;
+				margin-bottom: 70px;
+			}
+		}
+
+		&__features div {
+			text-align: center;
+		}
+
+		h2 {
+			color: #000;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 24px;
+			font-style: normal;
+			text-align: center;
+			margin-bottom: 48px;
+		
+			@include responsive-width($laptop-s) {
+				font-size: 40px;
+				margin-bottom: 65px;
+			}
+		}
+	
+		.tabs__options {
+			overflow: auto;
+			padding: 0 20px;
+			margin: 0 -20px 30px;
+		
+			@include responsive-width($mobile-l) {
+				margin: 0 -30px 30px;
+				padding: 0 30px;
+			}
+		
+			@include responsive-width($laptop-s) {
+				margin: 0 0 30px;
+				padding: unset;
+			}
+		}
+
+		.tabs__content .tabs__content-tab {
+			&.banos .grid .card .card__content button {
+				background-color: #08FF93;
+			}
+
+			&.gabinetes .grid .card .card__content button {
+				color: white;
+				background-color: #8C3786;
+			}
+
+			&.agua .grid .card .card__content button {
+				background-color: #2CE1E5;
+			}
+
+			&.accesorios .grid .card .card__content button {
+				background-color: #FADF46;
+			}
+		}
+	
+		.tabs__options::-webkit-scrollbar {
+			display: none;
+		}
+
+		.tabs__options > h2 {
+			text-align: left;
+		}
+		
+		.tabs__options > div {
+			gap: 0;
+			margin: 0;
+			display: flex;
+			width: fit-content;
+			flex-direction: column;
+			
+			@include responsive-width($laptop_s) {
+				gap: 42px;
+				margin: auto;
+				flex-direction: row;
+			}
+		}
+
+		.tabs__options >  h5 {
+			width: 100%;
+			padding: 10px;
+			font-size: 15px;
+			cursor: pointer;
+			margin-bottom: 0;
+			border-left: 1px solid #000;
+			border-right: 1px solid #000;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+
+			@include responsive-width($laptop_s) {
+				display: none;
+			}	
+		}
+
+		.tabs__options > div button {
+			gap: 10px;
+			width: 100%;
+			border-top: 0;
+			color: #000;
+			display: none;
+			padding: 10px 20px;
+			align-items: center;
+			transition: all ease .3s;
+			border-left: 1px solid #000;
+			border-right: 1px solid #000;
+			border-bottom: 1px solid #000;
+			
+			@include responsive-width($laptop_s) {
+				border: 0;
+				display: flex;
+				width: max-content;
+				border-radius: 50px;
+			}
+		}
+
+		.tabs__options > div button i {
+			width: 23px;
+			height: 23px;
+			display: block;
+			border-radius: 50%;
+		}
+
+		.tabs__options > div button:hover {
+			color: #000;
+			background-color: #e7e7e7;
+			
+			@include responsive-width($laptop_s) {
+				border-radius: 100px;
+			}
+		}
+
+		.tabs__options > div button.active {
+			color: #000;
+			
+			@include responsive-width($laptop_s) {
+				border-radius: 100px;
+				border: 1px solid #000;
+			}
+		}
+
+		.tabs__options > div button.active:hover {
+			color: #000;
+			background-color: transparent;
+		}
+
+		.grid {
+			gap: 18px;
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+		
+			@include responsive-width($mobile_l) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		
+			@include responsive-width($tablet_s) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		
+			@include responsive-width($laptop_s) {
+				gap: 35px;
+				grid-template-columns: repeat(4, 1fr);
+			}
+		
+			@include responsive-width($laptop_m) {
+				gap: 48px;
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+	
+		.card {
+			max-width: 180px;
+		
+			@include responsive-width($mobile_l) {
+				max-width: 180px;
+			}
+		
+			@include responsive-width($laptop-s) {
+				// height: 0;
+				max-width: 320px;
+			}
+		
+			&.visible {
+				opacity: 1;
+				height: 350px;
+				margin-top: 30px;
+		
+				@include responsive-width($laptop-s) {
+					margin-top: 40px;
+					height: 400px;
+				}
+			}
+		}
+	}
+}

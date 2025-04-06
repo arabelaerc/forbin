@@ -1,14 +1,19 @@
 section(class='map')
     div(class='container')
-        +icon('app-delivery')
-        h2 Entregamos a todo el país
-        p Ellos ya están vendiendo nuestro producto
+        div(class='headline')
+            div(class='icon')
+                +icon('app-delivery')
+            div
+                h2 Entregamos a todo el país
+                p Ellos ya están vendiendo nuestro producto
 
-    div(class='container')
-        div(class='map__buttons')
-            button(type="button") Buenos aires (101)
-            button(type="button") Gran Buenos Aires (104)
-            button(type="button") CABA (8)
-            button(type="button") Corrientes (10)
-            button(type="button") Córdoba (21)  
-            button(type="button") Chaco (7)
+        div(class='tag__options map__options')
+            div
+                button(type="button" class='active') Buenos aires (101)
+                button(type="button") Gran Buenos Aires (104)
+                button(type="button") CABA (8)
+                button(type="button") Corrientes (10)
+                button(type="button") Córdoba (21)  
+                button(type="button") Chaco (7)
+        
+        div(class='map-render')

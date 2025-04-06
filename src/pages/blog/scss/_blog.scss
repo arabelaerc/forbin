@@ -1,0 +1,208 @@
+@use '../../../base/scss/global'as *;
+
+.page__blog {
+
+	.blog {
+		padding: 30px 0;
+
+		h2 {
+			color: #000;
+			font-size: 35px;
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+
+	.blog__options {
+		div {
+			gap: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 35px;
+
+			@include responsive-width($laptop-s) {
+			}
+		}
+
+		div button {
+			flex: 0 0 auto;
+			padding: 5px 12px;
+			border-radius: 10px;
+			transition: all ease .3s;
+			border: 0.29px solid black;
+
+			@include responsive-width($laptop-m) {
+				font-size: 18px;
+			}
+
+			&:hover,
+			&.active {
+				color: white;
+				background-color: #285BEA;
+				border: 0.29px solid #285BEA;
+			}
+		}
+	}
+
+	.blog__news {
+		@include responsive-width($laptop_s) {
+			gap: 20px;
+			display: grid;
+			grid-template-areas: 
+			"featured lastnews"
+			"entries lastnews"
+			"entries lastnews";
+			grid-template-columns: 2fr 1fr;
+		}
+	}
+
+	.blog__featured {
+		position: relative;
+		border-radius: 10px;
+		border: 1px solid #000;
+		
+		@include responsive-width($tablet_m) {
+			height: 446px;
+			display: grid;
+			overflow: hidden;
+			grid-area: featured;
+		}
+
+		picture {
+			width: 100%;
+			
+			img {
+				width: 100%;
+			}
+		}
+		
+		div {
+			text-align: left;
+			padding: 20px 30px 50px 30px;
+
+			@include responsive-width($tablet_m) {
+				bottom: 0;
+				width: 482px;
+				position: absolute;
+				background-color: white;
+			}
+
+			span:first-of-type {
+				font-size: 10px;
+
+				@include responsive-width($tablet_m) {
+					display: block;
+					text-align: right;
+				}
+			}
+
+			p {
+				font-size: 18px;
+				font-weight: 700;
+
+				@include responsive-width($tablet_m) {
+					max-width: 280px;
+				}
+			}
+
+			span:last-of-type {
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 100%;
+			}
+		}
+	}
+
+	.blog__lastnews {
+		text-align: left;
+		margin: 21px auto;
+		border-radius: 10px;
+		padding: 0 26px 18px 26px;
+		border: 1px solid #D8D8D8;
+		
+		@include responsive-width($laptop_s) {
+			margin: 0;
+			max-height: 677px;
+		}
+
+		@include responsive-width($laptop_s) {
+			display: grid;
+			grid-area: lastnews;
+		}
+		
+		h2 {
+			text-align: left;
+			margin-bottom: 0;
+			margin-top: 18px;
+
+			@include responsive-width($laptop_s) {
+				font-size: 18px;
+				font-weight: 700;
+			}
+		}
+
+		nav a {
+			display: block;
+			color: #285BEA;
+			padding: 15px 10px;
+			border-bottom: 1px solid #D8D8D8;
+
+			@include responsive-width($laptop_s) {
+			}
+		}
+	}
+
+	.blog__entries {
+		gap: 23px;
+		display: grid;
+		
+		@include responsive-width($tablet_m) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include responsive-width($laptop_s) {
+			grid-area: entries;
+		}
+
+		.card {
+			height: 486px;
+			max-width: 341px;
+			border-radius: 10px;
+
+			picture {
+				height: 260px;
+			}
+
+			.card__content {
+				text-align: left;
+				padding: 0 30px 50px 30px;
+
+				span:first-of-type {
+					font-size: 10px;
+				}
+
+				p {
+					height: auto;
+					margin-top: 7px;
+					font-size: 18px;
+					font-weight: 700;
+
+					@include responsive-width($tablet_s) {
+						height: auto;
+						font-size: 14px;
+					}
+				}
+
+				span:last-of-type {
+					margin-top: 7px;
+					font-weight: 400;
+					
+					@include responsive-width($tablet_s) {
+						font-size: 13px;
+						line-height: 100%;
+					}	
+				}
+			}
+		}
+	}
+} 

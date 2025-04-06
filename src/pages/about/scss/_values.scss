@@ -1,72 +1,143 @@
-.values .container {
-    gap: 14px;
-    display: flex;
-    padding: 30px 20px;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+@use '../../../base/scss/global'as *;
 
-    @media screen and (min-width: 768px) {
-        padding: 50px 0;
-        max-width: 1020px;
-        align-items: stretch;
-    }
+.page__about {
 
-    h4 {
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 54px;
-    }
-}
+    .values {
+        padding-bottom: 30px;
 
-.values__cards {
-    gap: 34px;
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: 1024px) {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-}
-
-.values__card {
-    padding: 40px;
-    display: flex;
-    border-radius: 20px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    border: 0.29px solid black;
-    
-    @media screen and (min-width: 1024px) {
-        padding: 60px;
-        max-width: 490px;
-    }
-
-    h5 {
-        margin: 0;
-        font-size: 19px;
-        font-weight: 700;
-        color: #285BEA;
-        padding: 20px 10px;
-        font-weight: bold;
-    
-        @media screen and (min-width: 1024px) {
-            font-size: 40px;
+        @include responsive-width($tablet_m) {
+            padding-bottom: 50px;
         }
-    }
 
-    p {
-        font-size: 15px;
-        font-weight: 400;
-        text-align: justify;       
+        .container {
+            text-align: center;
     
-        // @media screen and (min-width: 1024px) {
-        //     font-size: 30px;
-        //     // padding: 0 130px;
-        //     text-align: center;
-        // }
+            @include responsive-width($tablet_m) {
+                align-items: stretch;
+            }
+            
+            @include responsive-width($laptop-m) {
+                max-width: 1020px;
+            }
+    
+            h2 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 34px;
+    
+                @include responsive-width($laptop_s) {
+                    font-size: 30px;
+                }
+
+                @include responsive-width($laptop_m) {
+                    font-size: 40px;
+                    margin-bottom: 44px;
+                }
+            }
+        }
+    
+        .values__cards {
+            gap: 34px;
+            display: flex;
+            flex-direction: column;
+    
+            @include responsive-width($laptop_s) {
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+        }
+    
+        .values__card {
+            padding: 30px;
+            display: flex;
+            border-radius: 20px;
+            align-items: center;
+            flex-direction: column;
+            transition: all ease .3s;
+            border: 1px solid black;
+            justify-content: flex-start;
+            box-shadow: 0 2.37128px 7.11383px 1.18564px rgba(184, 181, 201, .25);
+    
+            // &:hover {
+            //     border: 1px solid #285BEA;
+            //     transform: translateY(-20px);
+            // }
+    
+            @include responsive-width($laptop_s) {
+                flex: 1;
+                padding: 40px;
+                min-width: 400px;
+            }
+
+            @include responsive-width($laptop_m) {
+                padding: 60px;
+            }
+    
+            h5 {
+                margin: 0;
+                font-size: 19px;
+                font-weight: 600;
+                color: #285BEA;
+                padding: 20px 0 10px;
+    
+                @include responsive-width($laptop_s) {
+                    font-size: 25px;
+                }
+            }
+    
+            p {
+                font-size: 15px;
+                font-weight: 400;
+                text-align: center;
+    
+                @include responsive-width($laptop_s) {
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+        }
+    
+        .values__download {
+
+            a {
+                height: 45px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                margin-top: 50px;
+                font-weight: 600;
+                color: #fff;
+                max-width: 220px;
+                border-radius: 15px;
+                transition: all ease .3s;
+                background-color: #285BEA;
+                border: 2px solid #285BEA;
+    
+                &:hover {
+                    
+                    @include responsive-width($laptop-s) {
+                        // color: white;
+                        // background-color: #285BEA;
+                        transform: translateY(-1px);
+                    }
+                }
+            
+                &:active {
+                    transform: translateY(1px);
+                }
+    
+                @include responsive-width($laptop-s) {
+                    height: 55px;
+                    font-size: 20px;
+                    margin-top: 80px;
+                    padding: 12px 80px;
+                    color: #285BEA;
+                    max-width: 300px;
+                    background-color: #fff;
+                }
+            }
+        }
     }
 }

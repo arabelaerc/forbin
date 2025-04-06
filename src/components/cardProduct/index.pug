@@ -1,0 +1,29 @@
+mixin card(options)
+    -
+        options = options || {}
+        url = options.url || '#'
+        tag = options.tag || ''
+        title = options.title || 'Titulo'
+        date = options.date || ''
+        image = options.image || ''
+        modal = options.modal || 'modalDemo'
+        description = options.description || 'Descripción...'
+        button = options.button || ''
+
+    div(class='card')
+        if image
+            +image_retina({
+                image: image,
+                ext: 'jpg',
+                alt: ''
+            })
+            if tag 
+                i !{tag}
+        div(class='card__content')
+            if date 
+                span !{date}
+            p !{title}
+            if description 
+                span !{description}
+            if button
+                button(class='button' type='button' data-modal-in=modal) Ver ficha

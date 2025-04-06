@@ -1,0 +1,15 @@
+include ../../base/pug/index
+include ../../components/index
+
+-
+	title_page = 'Productos'
+	current_page = link.products
+
++html_template()
+	+header()
+	main(role='main' class='page__products')
+		include ./pug/_products
+	+footer()
+
+	+modal()
+		h2 Modal Demo - Ficha de producto

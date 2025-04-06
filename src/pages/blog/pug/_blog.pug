@@ -1,0 +1,85 @@
+-
+    categories = [
+        {
+            products: [
+                {
+                    date: '12 feb 2025',
+                    title: 'Aprendizaje automático: qué es, tipos y aplicaciones',
+                    description: 'El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.',
+                    image: 'blog'
+                },
+                {
+                    date: '12 feb 2025',
+                    title: 'Aprendizaje automático: qué es, tipos y aplicaciones',
+                    description: 'El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.',
+                    image: 'blog'
+                },
+                {
+                    date: '12 feb 2025',
+                    title: 'Aprendizaje automático: qué es, tipos y aplicaciones',
+                    description: 'El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.',
+                    image: 'blog'
+                },
+                {
+                    date: '12 feb 2025',
+                    title: 'Aprendizaje automático: qué es, tipos y aplicaciones',
+                    description: 'El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.',
+                    image: 'blog'
+                },
+                {
+                    date: '12 feb 2025',
+                    title: 'Aprendizaje automático: qué es, tipos y aplicaciones',
+                    description: 'El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.',
+                    image: 'blog'
+                },
+            ]
+        }     
+    ]
+
+section(class='blog')
+    div(class='container')
+        h2 Blog
+
+        div(class='blog__options')
+            div
+                button(type="button" class='active') Animación y Videojuegos
+                button(type="button") Arquitectura
+                button(type="button") Ciencias
+                button(type="button") Comunicación y Marketing
+                button(type="button") Educación
+                button(type="button") Deporte
+                button(type="button") Ingeniería
+                button(type="button") Turismo
+                button(type="button") Medicina y Salud
+        
+        div(class='blog__news')
+            div(class='blog__featured')
+                +image_retina({
+                    image: 'repair',
+                    ext: 'jpg',
+                    alt: ''
+                })
+                div 
+                    span 12 feb 2025
+                    p Aprendizaje automático: qué es, tipos y aplicaciones
+                    span El aprendizaje automático es un subconjunto de la Inteligencia Artifical (IA) con más aplicaciones. Los estudiantes pueden aprenden a operar.
+
+            div(class='blog__lastnews')
+                div     
+                    h2 Últimas historias
+                    nav
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+
+                    h2 Los más populares
+                    nav
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+                        a(href="") Aprendizaje automático
+            div(class='blog__entries')
+                for category, index in categories
+                    for product in category.products
+                        +card(product)    

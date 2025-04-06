@@ -30,8 +30,9 @@ section(class='hero')
               div(class='slide__content')
                 div(class='container')
                   div(class='content')
-                    h2 !{banner.title}
-                    p !{banner.description}
+                    div
+                      h2 !{banner.title}
+                      p !{banner.description}
                     +image_retina_media({
                       image: banner.image,
                       ext: 'png',

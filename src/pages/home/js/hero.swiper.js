@@ -14,7 +14,7 @@ class planesSwiper {
             modules: [Pagination, Navigation, Autoplay],
 			slidesPerView: 1,
 			// spaceBetween: 16,
-			initialSlide: 1,
+			initialSlide: 0,
 			slidesPerGroup: 1,
 			// watchOverflow: true,
 			// centeredSlides: true,

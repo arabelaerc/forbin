@@ -1,0 +1,135 @@
+-
+    tabs = [
+        {
+            id:'banos',
+            color: '#08FF93',
+            title: 'Baños y Sanitarios',
+        },
+        {
+            id:'gabinetes',
+            color: '#8C3786',
+            title: 'Gabinetes y Puertas para Gas',
+        },
+        {
+            id:'agua',
+            color: '#2CE1E5',
+            title: 'Tratamiento de Agua',
+        },
+        {
+            id:'accesorios',
+            color: '#FADF46',
+            title: 'Accesorios',
+        },        
+    ],
+
+    categories = [
+        {
+            id:'banos',
+            products: [
+                {
+                    title: 'Depósito para colgar a cadena N°1',
+                    image: 'producto-demo-1',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Mochila a codo N°4 a pulsador',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Depósito para colgar a cadena N°1',
+                    image: 'producto-demo-1',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Mochila a codo N°4 a pulsador',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Mochila a codo N°4 a pulsador',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+            ]
+        },
+        {
+            id:'gabinetes',
+            products: [
+                {
+                    title: 'Title gabinete 1',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Title gabinete 2',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+            ]
+        },
+        {
+            id:'agua',
+            products: [
+                {
+                    title: 'Title gabinete 1',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Title gabinete 2',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+            ]
+        },
+        {
+            id:'accesorios',
+            products: [
+                {
+                    title: 'Title gabinete 1',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+                {
+                    title: 'Title gabinete 2',
+                    image: 'producto-demo-2',
+                    button: 'Ver ficha'
+                },
+            ]
+        },        
+    ]
+
+section(class='products')
+    div(class='container')
+        div(class='products__features')
+            div 
+                +icon('app-cleaning')
+                p Simpleza
+            div 
+                +icon('app-funcionality')
+                p Funcionabilidad
+            div 
+                +icon('app-durability')
+                p Durabilidad
+
+
+        h2 Productos
+
+        div(class='tabs' _component='tabs')
+            div(class='tabs__options')
+                h2 Categorias
+                h5(id='tabs__category') Elegir categoría v
+                div
+                    for tab, index in tabs
+                        button(class='tab' type='button' class=index==0 ? 'active' : '' _tab-id=(tab.id)) 
+                            i(style=`background-color: ${tab.color}`)
+                            | !{tab.title}
+
+            div(class='tabs__content')
+                for category, index in categories
+                    div(class=index===0 ? 'active' : '' _tab-id=(category.id))
+                        div(class=`tabs__content-tab ${category.id}`)
+                                div(class='grid')
+                                    for product in category.products
+                                        +card(product)    

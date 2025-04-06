@@ -1,44 +1,55 @@
-.headlinemain .container {
-    display: flex;
-    padding: 30px 20px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+@use '../../../base/scss/global'as *;
 
-    @media screen and (min-width: 768px) {
-        padding: 50px 0;
-        max-width: 640px;
-    }
-}
+.page__home {
 
-.headlinemain h1 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    color: #285BEA;
-    padding: 0 10px;
-    font-weight: bold;
-    text-align: center;
+    .headlinemain {
 
-    @media screen and (min-width: 1024px) {
-        font-size: 40px;
-        // padding: 0 180px;
-    }
+        .container {
+            padding: 30px 20px;
+        
+            @include responsive-width($tablet_m) {
+                padding: 50px 0;
+                max-width: 640px;
+            }
 
-    @media screen and (min-width: 1280px) {
-        // padding: 0 160px;
-    }
-}
+            @include responsive-width($laptop-s) {
+                padding: 60px 0 80px;
+                max-width: 680px;
+            }
+        }
+    
+        h1 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #285BEA;
+            font-weight: 600;
+            text-align: center;
+        
+            @include responsive-width($laptop_s) {
+                font-size: 30px;
+                margin: 0 0 20px;
+            }
 
-.headlinemain p {
-    font-size: 17px;
-    font-weight: 400;
-    // padding: 7px 40px;
-    text-align: center;
+            @include responsive-width($laptop-m) {
+                font-size: 40px;
+            }
+        }
+    
+        p {
+            font-size: 17px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.1;
+        
+            @include responsive-width($laptop_s) {
+                font-size: 20px;
+                text-align: center;
+            }
 
-    @media screen and (min-width: 1024px) {
-        font-size: 30px;
-        // padding: 0 130px;
-        text-align: center;
+            @include responsive-width($laptop-m) {
+                font-size: 30px;
+            }
+        }
     }
 }

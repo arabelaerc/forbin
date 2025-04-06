@@ -1,14 +1,15 @@
 include ../../base/pug/index
-//- include ../../components/pug/components
+include ../../components/index
 
 -
-    title_page = 'Home'
+    title_page = 'Inicio'
     current_page = link.home
 
-
 +html_template()
-    main(role='main')
+    +header()
+    main(role='main' class='page__home')
         include ./pug/_hero
         include ./pug/_headline
-        include ./pug/_cards
+        include ./pug/_features
         include ./pug/_map
+    +footer()

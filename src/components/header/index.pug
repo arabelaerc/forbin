@@ -1,11 +1,32 @@
-header 
-    div
-        p logo
-    div 
-        nav 
-            a(href="") Home
-            a(href="") Nosotros
-            a(href="") Productos
-            a(href="") Blog
-            a(href="") fb
-            a(href="") ig
+mixin header
+	header(class='header')
+		div(class='container')
+			a(href=link.home title='Fibon' class='header__logo')
+				include ../../assets/img/logo-fibon.svg
+
+			div(class='header__menu')
+				nav
+					ul
+						each item_menu in menu
+							-
+								current_class = (current_page == item_menu.url) ? 'current_page_item' : ''
+								custom_class = (item_menu.custom_class) ? ' ' + item_menu.custom_class : ''
+								parent_class = (item_menu.submenu) ? ' menu-item-has-children' : ''
+								parent_class_active = (item_menu.submenu_active) ? ' hover' : ''
+
+							li(class=current_class + custom_class + parent_class + parent_class_active)
+								a(href=item_menu.url title=item_menu.name) #[span=item_menu.name]
+			
+			div(class='header__redes')
+				div
+					a(href='https://www.facebook.com/fibonsrl/?locale=es_LA' target='_blank' title='Facebook')
+						include ../../assets/img/icons/facebook.svg
+					a(href='https://www.instagram.com/fibon.srl/' target='_blank' title='Instagram')
+						include ../../assets/img/icons/instagram.svg
+
+			div(class='header__toggle')
+				button(class='hamburguer')
+					div
+						span
+						span 
+						span

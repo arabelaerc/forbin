@@ -5,8 +5,10 @@
 @forward 'swiper';
 
 // Components
-@forward '../../components/header/index.scss';
+@forward '../../components/index.scss';
 
 // Pages
 @forward '../../pages/home';
 @forward '../../pages/about';
+@forward '../../pages/blog';
+@forward '../../pages/products';

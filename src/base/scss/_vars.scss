@@ -2,7 +2,7 @@
 $path-font: '../../fonts/' !default;
 $path-image: '../../assets/img/' !default;
 
-$font-family-main: 'Barlow', sans-serif;
+$font-family-main: 'Montserrat', sans-serif;
 $font-family-second: 'Metropolis';
 
 // Layout
@@ -23,3 +23,7 @@ $laptop-s: 1024px;
 $laptop-m: 1280px;
 $desktop-s: 1440px;
 $desktop-m: 1750px;
+
+
+$header_height_mob: 70px;
+$header_height_desk: 94px;

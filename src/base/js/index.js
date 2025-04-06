@@ -7,9 +7,12 @@
 // @import 'swiper/swiper-bundle.scss';
 import 'swiper/scss';
 
-// Principal styles
-// import '../scss/index.scss'
+// App style
 import '../scss/index.scss'
+
+// Components
+import '../../components/index'
 
 // Pages
 import '../../pages/home'
+import '../../pages/products'

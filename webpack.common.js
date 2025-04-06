@@ -29,7 +29,27 @@ module.exports = {
         new HtmlWebpackPlugin({
 			template: './src/pages/about/index.pug',
 			hash: true,
-			filename: 'about/index.html',
+			filename: 'nosotros/index.html',
+			chunks: ['main'],
+			inject: true,
+			// minify: {
+			// 	collapseWhitespace: process.env.NODE_ENV === 'production' ? true : false
+			// }
+		}),
+        new HtmlWebpackPlugin({
+			template: './src/pages/products/index.pug',
+			hash: true,
+			filename: 'productos/index.html',
+			chunks: ['main'],
+			inject: true,
+			// minify: {
+			// 	collapseWhitespace: process.env.NODE_ENV === 'production' ? true : false
+			// }
+		}),
+        new HtmlWebpackPlugin({
+			template: './src/pages/blog/index.pug',
+			hash: true,
+			filename: 'blog/index.html',
 			chunks: ['main'],
 			inject: true,
 			// minify: {

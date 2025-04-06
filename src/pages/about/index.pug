@@ -1,13 +1,15 @@
 include ../../base/pug/index
-//- include ../../components/pug/components
+include ../../components/index
 
 -
-	title_page = 'About'
+	title_page = 'Nosotros'
 	current_page = link.about
 
 
 +html_template()
-	main(role='main')
+	+header()
+	main(role='main' class='page__about')
 		include ./pug/_headline
 		include ./pug/_cards
 		include ./pug/_values
+	+footer()
