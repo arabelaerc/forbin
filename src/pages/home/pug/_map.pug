@@ -9,15 +9,13 @@ section(class='map')
 
         div(class='tag__options map__options')
             div
-                //- button(type="button" class='active') Buenos aires (101)
-                button(onclick="toggleGrupo('BsAs')") Buenos aires (101)
-                button(onclick="toggleGrupo('StaFe')") Santfe (5)
-                button(onclick="toggleGrupo('GranBsAs')") Gran Buenos Aires (104)
-                button(onclick="toggleGrupo('Caba')") CABA (8)
-                //- button(type="button") CABA (8)}}
-                button(type="button") Corrientes (10)
-                button(type="button") Córdoba (21)  
-                button(type="button") Chaco (7)
+                button(type="button" onclick="toggleGrupo('BsAs')") Buenos aires (101)
+                button(type="button" onclick="toggleGrupo('StaFe')") Santfe
+                button(type="button" onclick="toggleGrupo('GranBuenosAires')") Gran Buenos Aires (104)
+                button(type="button" onclick="toggleGrupo('Caba')") CABA (8)
+                button(type="button" onclick="toggleGrupo('Corrientes')") Corrientes (10)
+                button(type="button" onclick="toggleGrupo('Cordoba')") Córdoba (21)  
+                button(type="button" onclick="toggleGrupo('Chaco')") Chaco (7)
         
         //- div(class='map-render')
         div(id="map" style="height: 500px;")

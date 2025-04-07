@@ -7,7 +7,7 @@ mixin card(options)
         date = options.date || ''
         image = options.image || ''
         modal = options.modal || 'modalDemo'
-        description = options.description || 'Descripción...'
+        description = options.description || ''
         button = options.button || ''
 
     div(class='card')
@@ -18,7 +18,7 @@ mixin card(options)
                 alt: ''
             })
             if tag 
-                i !{tag}
+                i(class='tag') !{tag}
         div(class='card__content')
             if date 
                 span !{date}
