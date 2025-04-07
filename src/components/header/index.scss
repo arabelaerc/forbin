@@ -92,7 +92,7 @@
 	}
 
 	&__menu {
-		left: 0;
+		top: $header_height_mob;
 		left: -100%;
 		z-index: 1;
 		width: 100%;
@@ -101,7 +101,7 @@
 		text-align: center;
 		background-color: #fff;
 		height: calc(100% - $header_height_mob);
-		transition: left .6s ease .2s;
+		transition: left .4s;
 
 		@include responsive-width($laptop_s) {
 			left: 0;
@@ -148,12 +148,11 @@
 	}
 
 	&__menu nav {
-		padding: 20px 20px 30px;
+		padding: 20px 0 30px;
 		background-color: #fff;
 		box-shadow: inset 0px 8px 10px -10px #CCC;
 
 		@include responsive-width($mobile_l) {
-			padding: 20px 30px 30px;
 			box-shadow: none;
 		}
 
@@ -174,10 +173,8 @@
 
 		li {
 			display: block;
-			margin: 0 0 8px;
 			text-align: left;
-			line-height: 32px;
-			border-bottom: 1px solid #000;
+			line-height: 1;
 
 			@include responsive-width($laptop_s) {
 				// margin: 0 0 0 -4px;
@@ -194,8 +191,13 @@
 			}
 
 			a {
-				padding: 10px 20px;
+				display: block;
+				padding: 0px 20px;
 				transition: color .3s;
+
+				@include responsive-width($mobile-l) {
+					padding: 0px 30px;
+				}
 
 				@include responsive-width($laptop_s) {
 					color: #fff;
@@ -205,6 +207,17 @@
 					
 					@include responsive-width($laptop_s) {
 						color: #ff7b7b;
+					}
+				}
+
+				span {
+					display: flex;
+					height: 42px;
+					align-items: center;
+					border-bottom: 1px solid #d2d2d2;
+
+					@include responsive-width($laptop_s) {
+						border: none;
 					}
 				}
 			}
@@ -224,6 +237,10 @@
 
 	@include responsive-width($mobile-l) {
 		right: 30px;
+	}
+
+	@include responsive-width($tablet-s) {
+		right: 0px;
 	}
 
 	@include responsive-width($laptop-s) {

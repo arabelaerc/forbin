@@ -1,0 +1,127 @@
+@use '../../../base/scss/global'as *;
+
+.page__products {
+
+    .modal__container {
+        overflow: hidden;
+        border-radius: 20px;
+        padding-top: 66px;
+        padding-bottom: 66px;
+
+        @include responsive-width($laptop-s) {
+            max-width: 960px;
+        }
+
+        &::after {
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10px;
+            display: block;
+            position: absolute;
+            background-color: #08FF93;
+        }
+    }
+
+    .modal__close {
+        width: 36px;
+        height: 36px;
+        margin-top: 20px;
+        margin-right: 20px;
+        border: none;
+        background-color: #08FF93;
+        transition: transform .3s;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+
+    .swiper-pagination {
+        bottom: 20px !important;
+    }
+
+    .swiper-pagination-bullet {
+        border-color: #000;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #000;
+    }
+
+    .modal-ficha {
+        @include responsive-width($laptop-s) {
+            gap: 30px;
+            display: flex;
+        }
+    }
+
+    .modal-ficha__product {
+        position: relative;
+        width: 309px;
+        height: 309px;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #d2d2d2;
+        margin: 0 auto 20px;
+
+        @include responsive-width($laptop-s) {
+            width: 425px;
+            height: 425px;
+            margin: 0;
+        }
+    }
+
+    .modal-ficha__description {
+
+        .name {
+            padding-bottom: 14px;
+            border-bottom: 1px solid #000;
+            margin-bottom: 20px;
+
+            h2 {
+                font-weight: 600;
+                font-size: 16px;
+                margin-bottom: 8px;
+
+                @include responsive-width($laptop-s) {
+                    font-size: 18px;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        .detail {
+
+            p {
+                margin-bottom: 8px;
+
+                @include responsive-width($laptop-s) {
+                    font-size: 16px;
+                }
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 8px;
+
+                @include responsive-width($laptop-s) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

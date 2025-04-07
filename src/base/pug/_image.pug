@@ -25,9 +25,10 @@ mixin image_retina_media(options)
 
 	picture&attributes(attributes)
 
+		//- srcset= `${img_path + image}-desk.${ext} 1x, ${img_path + image}-desk@2x.${ext} 2x`
 		if ext !== 'svg'
 			source(
-				srcset= `${img_path + image}-desk.${ext} 1x, ${img_path + image}-desk@2x.${ext} 2x`
+				srcset= `${img_path + image}-desk.${ext} 1x`
 				media=`(min-width: ${media}px)`
 				type= `image/${ext}`
 			)

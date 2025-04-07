@@ -3,7 +3,7 @@
 .footer {
 	color: #000;
 	overflow: hidden;
-	font-weight: 400;
+	font-weight: 300;
 	position: relative;
 	padding-top: 100px;
 	// border-top: 1px solid #E2E4E8;
@@ -126,6 +126,7 @@
 
 			a {
 				color: #fff;
+				cursor: pointer;
 				text-decoration: underline;
 			}
 		}

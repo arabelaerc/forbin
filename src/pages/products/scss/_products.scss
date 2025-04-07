@@ -10,8 +10,16 @@
 			justify-content: space-evenly;
 
 			@include responsive-width($laptop_s) {
-				margin-top: 50px;
-				margin-bottom: 70px;
+				margin-top: 40px;
+				margin-bottom: 50px;
+			}
+
+			svg {
+
+				@include responsive-width($laptop_s) {
+					width: 65px;
+				height: 65px;
+				}
 			}
 		}
 
@@ -19,35 +27,256 @@
 			text-align: center;
 		}
 
-		h2 {
+		h1 {
 			color: #000;
-			font-size: 20px;
-			margin-top: 30px;
+			font-size: 24px;
 			font-weight: 600;
-			line-height: 24px;
 			font-style: normal;
 			text-align: center;
-			margin-bottom: 48px;
-		
+			margin: 26px 0 18px;
+
 			@include responsive-width($laptop-s) {
-				font-size: 40px;
-				margin-bottom: 65px;
+				font-size: 30px;
+				margin-bottom: 24px;
+			}
+
+			@include responsive-width($laptop-m) {
+				font-size: 36px;
+				margin-bottom: 30px;
 			}
 		}
-	
-		.tabs__options {
-			overflow: auto;
-			padding: 0 20px;
-			margin: 0 -20px 30px;
-		
-			@include responsive-width($mobile-l) {
-				margin: 0 -30px 30px;
-				padding: 0 30px;
+
+		.tabs {
+
+			h2 {
+				display: none;
+
+				@include responsive-width($laptop-s) {
+					display: block;
+					font-size: 24px;
+					font-weight: 600;
+					margin-bottom: 36px;
+				}
 			}
-		
+		}
+
+		.tabs__options {
+			margin: 0;
+			padding: 0;
+			overflow: unset;
+
+			z-index: 3;
+			position: sticky;
+			top: 70px;
+
+			background-color: #fff;
+			margin: 0 -20px;
+
+			@include responsive-width($mobile-l) {
+				margin: 0 -30px;
+			}
+
+			@include responsive-width($tablet-s) {
+				margin: 0 auto;
+			}
+
+
 			@include responsive-width($laptop-s) {
-				margin: 0 0 30px;
-				padding: unset;
+				position: relative;
+				top: 0;
+				padding-bottom: 40px;
+			}
+
+			&.active {
+
+				.tabs-options {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				.tabs-btn {
+					&::after {
+						transform: scaleY(-1);
+					}
+				}
+			}
+
+			>h2 {
+				text-align: left;
+			}
+
+			.tabs-options {
+				gap: 0;
+				margin: 0;
+				display: flex;
+				width: fit-content;
+				flex-direction: column;
+
+
+				visibility: hidden;
+				overflow: hidden;
+
+				width: 100%;
+				border-bottom: 1px solid #d2d2d2;
+				max-height: 242px;
+				overflow-y: auto;
+
+				opacity: 0;
+				position: absolute;
+				background-color: #fff;
+
+				@include responsive-width($laptop_s) {
+					gap: 30px;
+					margin: auto;
+					flex-direction: row;
+					opacity: 1;
+					visibility: visible;
+					position: relative;
+					border-bottom: none;
+					justify-content: space-between;
+				}
+
+				@include responsive-width($laptop_m) {
+					gap: 40px;
+				}
+
+				&::-webkit-scrollbar {
+					width: 6px;
+					/* Tamaño del scroll en vertical */
+					height: 6px;
+					/* Tamaño del scroll en horizontal */
+					// display: none;  /* Ocultar scroll */
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: #ccc;
+					border-radius: 4px;
+					border-top-right-radius: 0;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: #e1e1e1;
+					border-radius: 4px;
+					border-top-right-radius: 0;
+				}
+			}
+
+			.tabs-btn {
+				height: 50px;
+				width: 100%;
+				text-align: left;
+				font-size: 16px;
+				color: #000;
+				font-weight: 500;
+				border-bottom: 1px solid #d2d2d2;
+				padding: 0 20px;
+
+				@include responsive-width($mobile-l) {
+					padding: 0 30px;
+				}
+
+				@include responsive-width($laptop-s) {
+					display: none;
+				}
+
+				&::after {
+					right: 20px;
+					line-height: 0;
+					position: absolute;
+					pointer-events: none;
+					transition: transform .3s;
+					// content: image_url_root('icons/icon-dropdown.png');
+					content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS41OTQ4IDE0LjcwMDRDMTEuODE4NiAxNC45MjE3IDEyLjE4MTQgMTQuOTIxNyAxMi40MDUyIDE0LjcwMDRMMTkuNzg4OSA3LjM5NjQzQzIwLjAxMDkgNy4xNzY4IDIwLjM2ODQgNy4xNzY4IDIwLjU5MDQgNy4zOTY0M0MyMC44MTU5IDcuNjE5NDcgMjAuODE1OSA3Ljk4MzY4IDIwLjU5MDQgOC4yMDY3MUwxMy4yMTU1IDE1LjUwMkMxMi41NDQyIDE2LjE2NiAxMS40NTU4IDE2LjE2NiAxMC43ODQ1IDE1LjUwMkwzLjQwOTU3IDguMjA2NzFDMy4xODQwOSA3Ljk4MzY4IDMuMTg0MDkgNy42MTk0NyAzLjQwOTU3IDcuMzk2NDNDMy42MzE2IDcuMTc2OCAzLjk4OTA2IDcuMTc2NzkgNC4yMTEwOSA3LjM5NjQzTDExLjU5NDggMTQuNzAwNFoiIGZpbGw9IiMwMDJFRkYiLz4KPC9zdmc+Cg==");
+
+					@include responsive-width($mobile-l) {
+						right: 30px;
+					}
+				}
+			}
+
+			.tab {
+				gap: 10px;
+				width: 100%;
+				// border-top: 0;
+				color: #000;
+				align-items: center;
+				transition: all ease .3s;
+				// border-left: 1px solid #000;
+				// border-right: 1px solid #000;
+				// border-bottom: 1px solid #000;
+				display: flex;
+				align-items: center;
+				height: 40px;
+				flex-shrink: 0;
+				padding: 0 20px;
+				border: 1px solid transparent;
+
+				@include responsive-width($mobile-l) {
+					padding: 0 30px;
+				}
+
+				@include responsive-width($laptop_s) {
+					width: max-content;
+					border-radius: 50px;
+					font-size: 14px;
+					padding: 10px 12px;
+				}
+
+				@include responsive-width($laptop_m) {
+					font-size: 16px;
+				}
+
+				&:hover {
+					color: #000;
+					background-color: #e7e7e7;
+
+					@include responsive-width($laptop_s) {
+						border-radius: 100px;
+					}
+				}
+
+				&.active {
+					color: #ff7b7b;
+					
+					@include responsive-width($laptop_s) {
+						color: #000;
+						border-color: #000;
+					}
+
+					&:hover {
+						cursor: auto;
+						background-color: transparent;
+					}
+				}
+			}
+
+			.circle {
+				width: 18px;
+				height: 18px;
+				display: block;
+				border-radius: 50%;
+				flex-shrink: 0;
+				background-color: #f2f2f2;
+
+				@include responsive-width($laptop-s) {
+					width: 23px;
+					height: 23px;
+				}
+			}
+
+			.tab-selected {
+				gap: 10px;
+				display: flex;
+				padding: 20px 20px;
+				border-bottom: 1px solid #d2d2d2;
+
+				@include responsive-width($mobile-l) {
+					padding: 20px 30px;
+				}
+
+				@include responsive-width($laptop-s) {
+					display: none;
+				}
 			}
 		}
 
@@ -69,137 +298,57 @@
 				background-color: #FADF46;
 			}
 		}
-	
-		.tabs__options::-webkit-scrollbar {
-			display: none;
-		}
-
-		.tabs__options > h2 {
-			text-align: left;
-		}
-		
-		.tabs__options > div {
-			gap: 0;
-			margin: 0;
-			display: flex;
-			width: fit-content;
-			flex-direction: column;
-			
-			@include responsive-width($laptop_s) {
-				gap: 42px;
-				margin: auto;
-				flex-direction: row;
-			}
-		}
-
-		.tabs__options >  h5 {
-			width: 100%;
-			padding: 10px;
-			font-size: 15px;
-			cursor: pointer;
-			margin-bottom: 0;
-			border-left: 1px solid #000;
-			border-right: 1px solid #000;
-			border-top: 1px solid #000;
-			border-bottom: 1px solid #000;
-
-			@include responsive-width($laptop_s) {
-				display: none;
-			}	
-		}
-
-		.tabs__options > div button {
-			gap: 10px;
-			width: 100%;
-			border-top: 0;
-			color: #000;
-			display: none;
-			padding: 10px 20px;
-			align-items: center;
-			transition: all ease .3s;
-			border-left: 1px solid #000;
-			border-right: 1px solid #000;
-			border-bottom: 1px solid #000;
-			
-			@include responsive-width($laptop_s) {
-				border: 0;
-				display: flex;
-				width: max-content;
-				border-radius: 50px;
-			}
-		}
-
-		.tabs__options > div button i {
-			width: 23px;
-			height: 23px;
-			display: block;
-			border-radius: 50%;
-		}
-
-		.tabs__options > div button:hover {
-			color: #000;
-			background-color: #e7e7e7;
-			
-			@include responsive-width($laptop_s) {
-				border-radius: 100px;
-			}
-		}
-
-		.tabs__options > div button.active {
-			color: #000;
-			
-			@include responsive-width($laptop_s) {
-				border-radius: 100px;
-				border: 1px solid #000;
-			}
-		}
-
-		.tabs__options > div button.active:hover {
-			color: #000;
-			background-color: transparent;
-		}
 
 		.grid {
-			gap: 18px;
+			gap: 14px;
 			display: grid;
+			margin: 0 auto;
+			max-width: 380px;
 			grid-template-columns: repeat(1, 1fr);
-		
-			@include responsive-width($mobile_l) {
+
+			@include responsive-width($mobile_m) {
 				grid-template-columns: repeat(2, 1fr);
 			}
-		
+
+			@include responsive-width($mobile_l) {
+				gap: 18px;
+				grid-template-columns: repeat(2, 1fr);
+			}
+
 			@include responsive-width($tablet_s) {
+				max-width: 578px;
 				grid-template-columns: repeat(3, 1fr);
 			}
-		
+
 			@include responsive-width($laptop_s) {
-				gap: 35px;
+				gap: 24px;
+				max-width: unset;
 				grid-template-columns: repeat(4, 1fr);
 			}
-		
+
 			@include responsive-width($laptop_m) {
-				gap: 48px;
+				gap: 40px;
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}
-	
+
 		.card {
 			max-width: 180px;
-		
+
 			@include responsive-width($mobile_l) {
 				max-width: 180px;
 			}
-		
+
 			@include responsive-width($laptop-s) {
 				// height: 0;
 				max-width: 320px;
 			}
-			
+
 			&.visible {
 				opacity: 1;
 				height: 350px;
 				margin-top: 30px;
-		
+
 				@include responsive-width($laptop-s) {
 					margin-top: 40px;
 					height: 400px;
@@ -208,7 +357,6 @@
 
 			i.tag {
 				left: 10px;
-				z-index: 12;
 				bottom: 50%;
 				font-size: 12px;
 				color: white;
@@ -221,6 +369,55 @@
 				@include responsive-width($laptop_s) {
 					bottom: 40%;
 				}
+			}
+
+			.card__content {
+
+				@include responsive-width($laptop-s) {
+					padding: 14px 20px 20px;
+				}
+			}
+		}
+	}
+
+	.products__bottom {
+		text-align: center;
+		margin-top: 30px;
+
+		@include responsive-width($laptop-s) {
+			margin-top: 50px;
+		}
+
+		.download-btn {
+			gap: 10px;
+			height: 54px;
+			padding: 0 24px;
+			align-items: center;
+			display: inline-flex;
+			border-radius: 12px;
+			border: 1px solid #000;
+			justify-content: center;
+			transition: all .3s;
+
+			&:hover {
+				color: #fff;
+				background-color: #285BEA;
+				transform: translateY(-1px);
+				border-color: #285BEA;
+
+				svg {
+					path {
+						stroke: #fff;
+					}
+				}
+			}
+		
+			&:active {
+				transform: translateY(1px);
+			}
+
+			svg {
+				transition: all .3s;
 			}
 		}
 	}

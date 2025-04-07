@@ -82,7 +82,7 @@
             }
 
             @include responsive-width($laptop-m) {
-                font-size: 40px;
+                font-size: 36px;
             }
         }
 
@@ -98,7 +98,7 @@
             }
 
             @include responsive-width($laptop-m) {
-                font-size: 30px;
+                font-size: 28px;
                 margin-bottom: 70px;
             }
         }
@@ -113,7 +113,7 @@
                 border: 0.29px solid black;
 
                 @include responsive-width($laptop-m) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
 
                 &:hover,
@@ -136,5 +136,9 @@
         @include responsive-width($laptop-s) {
             height: 380px;
         }
+    }
+
+    .leaflet-control-attribution.leaflet-control {
+        display: none;
     }
 }

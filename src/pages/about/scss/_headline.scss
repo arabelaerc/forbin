@@ -10,7 +10,7 @@
         }
         
         @include responsive-width($laptop-m) {
-            padding: 90px 0 120px;
+            padding: 60px 0 100px;
         }
     
         h1 {
@@ -29,7 +29,7 @@
             }
             
             @include responsive-width($laptop-m) {
-                font-size: 40px;
+                font-size: 36px;
             }
         }
     
@@ -44,7 +44,7 @@
             }
 
             @include responsive-width($laptop-m) {
-                font-size: 30px;
+                font-size: 28px;
                 max-width: 830px;
                 margin: 0 auto;
             }

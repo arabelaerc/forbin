@@ -118,18 +118,20 @@ section(class='products')
                 +icon('app-durability')
                 p Durabilidad
 
-
-        h2 Productos
+        h1 Productos
 
         div(class='tabs' _component='tabs')
-            div(class='tabs__options')
-                h2 Categorias
-                h5(id='tabs__category') Elegir categoría v
-                div
+            h2 Categorias
+            div(class='tabs__options')#categoriesOptions
+                button(class='tabs-btn' type='button') Categorias
+                div(class='tabs-options')
                     for tab, index in tabs
                         button(class='tab' type='button' class=index==0 ? 'active' : '' _tab-id=(tab.id)) 
-                            i(style=`background-color: ${tab.color}`)
-                            | !{tab.title}
+                            i(class='circle' style=`background-color: ${tab.color}`)
+                            span !{tab.title}
+                div(class='tab-selected')
+                    i(class='circle')
+                    span Baños y Sanitarios
 
             div(class='tabs__content')
                 for category, index in categories
@@ -137,4 +139,9 @@ section(class='products')
                         div(class=`tabs__content-tab ${category.id}`)
                                 div(class='grid')
                                     for product in category.products
-                                        +card(product)    
+                                        +card(product)
+        
+        div(class='products__bottom')
+            a(href='#' class='download-btn') 
+                +icon('download')
+                span Descargar catálogo de productos

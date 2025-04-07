@@ -67,11 +67,12 @@
                 > div {
 
                     @include responsive-width($laptop-s) {
-                        max-width: 630px;
+                        max-width: 500px;
                     }
 
                     @include responsive-width($laptop-m) {
-                        max-width: 700px;
+                        max-width: 600px;
+                        z-index: 1;
                     }
                 }
             }
@@ -80,20 +81,17 @@
                 font-size: 28px;
                 font-weight: 600;
                 color: #285BEA;
-                margin-bottom: 7px;
+                margin-bottom: 10px;
                 grid-area: heading;
                 line-height: 1.1;
 
                 @include responsive-width($laptop-s) {
                     font-size: 40px;
+                    margin-bottom: 20px;
                 }
 
                 @include responsive-width($laptop-m) {
-                    font-size: 60px;
-                }
-
-                @include responsive-width($desktop-s) {
-                    font-size: 50px;
+                    font-size: 52px;
                 }
             }
 
@@ -109,9 +107,9 @@
                     font-size: 28px;
                 }
 
-                @include responsive-width($laptop-m) {
-                    font-size: 32px;
-                }
+                // @include responsive-width($laptop-m) {
+                //     font-size: 32px;
+                // }
             }
 
             picture {
@@ -123,6 +121,8 @@
                 @include responsive-width($laptop-m) {
                     min-width: 300px;
                     min-height: 300px;
+                    position: absolute;
+                    right: -20px;
                 }
             }
         }

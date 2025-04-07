@@ -38,6 +38,7 @@
 	height: 160px;
 	overflow: hidden;
 	display: inline-block;
+	background-color: #f2f2f2;
 
 	@include responsive-width($laptop-s) {
 		height: 200px;
@@ -46,12 +47,12 @@
 	@include responsive-width($laptop-m) {
 		height: 250px;
 	}
-}
 
-.card picture img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .card .card__content {
@@ -81,7 +82,7 @@
 		
 		@include responsive-width($laptop_m) {
 			height: 44px;
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
 

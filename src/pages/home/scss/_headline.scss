@@ -32,7 +32,7 @@
             }
 
             @include responsive-width($laptop-m) {
-                font-size: 40px;
+                font-size: 36px;
             }
         }
     
@@ -48,7 +48,7 @@
             }
 
             @include responsive-width($laptop-m) {
-                font-size: 30px;
+                font-size: 28px;
             }
         }
     }
