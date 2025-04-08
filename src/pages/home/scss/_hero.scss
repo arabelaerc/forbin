@@ -117,12 +117,14 @@
                 grid-area: picture;
                 min-width: 200px;
                 min-height: 200px;
+                margin-top: 21px;
 
                 @include responsive-width($laptop-m) {
+                    right: -20px;
+                    margin-top: 0;
                     min-width: 300px;
                     min-height: 300px;
                     position: absolute;
-                    right: -20px;
                 }
             }
         }

@@ -24,23 +24,22 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
 
+.swiper-pagination-bullet {
+	opacity: 1;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	margin: 0 4px !important;
+	background-color: transparent;
+	border: 1px solid #285BEA;
+}
 
-	&-bullet {
-		opacity: 1;
-		width: 11px;
-		height: 11px;
-		border-radius: 50%;
-		margin: 0 4px !important;
-		background-color: transparent;
-		border: 1px solid #285BEA;
-	}
-
-	&-bullet-active {
-		width: 12px;
-		height: 12px;
-		background-color: #285BEA;
-	}
+.swiper-pagination-bullet-active {
+	width: 12px;
+	height: 12px;
+	background-color: #285BEA;
 }
 
 .swiper-button-next,

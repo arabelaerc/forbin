@@ -72,8 +72,13 @@
             max-width: 200px;
             line-height: 100%;
             font-weight: 600;
-            margin: 0 auto 14px;
+            margin: 0 auto 16px;
             text-align: center;
+
+            @include responsive-width($tablet-s) {
+                max-width: none;
+                margin: 0 auto 20px;
+            }
 
             @include responsive-width($laptop-s) {
                 padding: 0;

@@ -33,7 +33,7 @@ export function Categories() {
         const $optionSelectedText = $optionSelected.querySelector('span')
 
         $optionTextTag.style = $optionSelectedColor.style.cssText
-        $optionTextName.style = $optionSelectedText.textContent
+        $optionTextName.textContent = $optionSelectedText.textContent
     }
 
     function events() {
