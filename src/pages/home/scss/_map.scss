@@ -14,17 +14,18 @@
 
         .tag__options {
             overflow: auto;
-            padding: 0 20px;
-            margin: 0 -20px 20px;
-
+            margin: 0 -20px 24px;
+            
             @include responsive-width($mobile-l) {
                 margin: 0 -30px 20px;
-                padding: 0 30px;
             }
-
+            
             @include responsive-width($laptop-s) {
                 margin: 0 0 20px;
-                padding: unset;
+            }
+            
+            &::-webkit-scrollbar {
+                display: none;
             }
 
             >div {
@@ -34,6 +35,15 @@
                 padding-bottom: 6px;
                 // width: fit-content;
                 width: max-content;
+                padding: 0 20px;
+
+                @include responsive-width($mobile-l) {
+                    padding: 0 30px
+                }
+                
+                @include responsive-width($laptop-s) {
+                    padding: 0px
+                }
             }
         }
 
@@ -115,7 +125,7 @@
                 padding: 5px 12px;
                 border-radius: 10px;
                 transition: all ease .3s;
-                border: 0.29px solid black;
+                border: 1px solid black;
 
                 @include responsive-width($laptop-m) {
                     font-size: 16px;
@@ -125,7 +135,7 @@
                 &.active {
                     color: white;
                     background-color: #285BEA;
-                    border: 0.29px solid #285BEA;
+                    border: 1px solid #285BEA;
                 }
             }
         }
@@ -133,13 +143,13 @@
 
     .map-render {
         width: 100%;
-        height: 340px;
+        height: 360px !important;
         overflow: hidden;
         border-radius: 20px;
         background-color: #e9e9ea;
 
         @include responsive-width($laptop-s) {
-            height: 380px;
+            height: 440px !important;
         }
     }
 

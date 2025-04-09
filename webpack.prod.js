@@ -35,7 +35,7 @@ module.exports = merge(common, {
     new PurgeCSSPlugin({
       paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true }), // Busca todos los archivos relevantes
       safelist: {
-        standard: ['active', 'swiper-pagination-bullet', 'swiper-pagination-bullet-active', 'class-to-keep', /^dynamic-class-/], // Clases que no se deben purgar
+        standard: ['active', 'leaflet-control', 'swiper-pagination-bullet', 'swiper-pagination-bullet-active', 'class-to-keep', /^dynamic-class-/], // Clases que no se deben purgar
         deep: [/^dynamic-class-/, /^tooltip-/], // Clases que comienzan con "dynamic-class-" o "tooltip-"
         greedy: [/^ui-/], // Clases completas como "ui-btn"
         keyframes: true, // Mantiene todas las animaciones (keyframes)

@@ -27,18 +27,19 @@
 
 	.blog__options {
 		overflow: auto;
-		padding: 0 20px;
 		margin: 0 -20px 20px;
 
 		@include responsive-width($mobile-l) {
-			margin: 0 -30px 20px;
-			padding: 0 30px;
+			margin: 0 -30px 24px;
 		}
 
 		@include responsive-width($laptop-s) {
 			margin: 0 0 20px;
-			padding: unset;
 			overflow: unset;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
 		}
 
 		>div {
@@ -48,10 +49,16 @@
 			padding-bottom: 6px;
 			// width: fit-content;
 			width: max-content;
+			padding: 0 20px;
+
+			@include responsive-width($mobile-l) {
+				padding: 0 30px;
+			}
 
 			@include responsive-width($laptop-s) {
-				flex-wrap: wrap;
+				padding: 0;
 				width: auto;
+				flex-wrap: wrap;
 				justify-content: center;
 			}
 		}
@@ -66,7 +73,7 @@
 			padding: 5px 12px;
 			border-radius: 10px;
 			transition: all ease .3s;
-			border: 0.29px solid black;
+			border: 1px solid black;
 
 			@include responsive-width($laptop-s) {
 				font-size: 14px;
@@ -80,7 +87,7 @@
 			&.active {
 				color: white;
 				background-color: #285BEA;
-				border: 0.29px solid #285BEA;
+				border: 1px solid #285BEA;
 			}
 		}
 	}

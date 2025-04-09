@@ -18,7 +18,7 @@
 	}
 	
 	@include responsive-width($laptop-m) {
-		height: 400px;
+		height: 410px;
 		max-width: 320px;
 	}
 }
@@ -70,10 +70,11 @@
 	}
 
 	p {
-		height: 34px;
+		height: 46px;
 		color: #000;
 		font-size: 13px;
 		text-align: left;
+		line-height: 1.2;
 
 		// @include responsive-width($tablet_m) {
 		// 	height: 44px;
@@ -81,45 +82,17 @@
 		// }
 		
 		@include responsive-width($laptop_m) {
-			height: 44px;
+			height: 60px;
 			font-size: 16px;
 		}
 	}
 
 	.button {
 		width: 124px;
-		height: 38px;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		color: #000;
-		font-size: 13px;
-		cursor: pointer;
-		font-weight: 600;
-		border-radius: 10px;
-		text-align: center;
-		font-style: normal;
 		background-color: #08ff93;
-		transition: transform .3s;
 
-		// @include responsive-width($tablet_m) {
-		// 	height: 48px;
-		// 	width: 190px;
-		// 	font-size: 15px;
-		// }
-		
 		@include responsive-width($laptop_m) {
-			height: 48px;
 			width: 190px;
-			font-size: 15px;
-		}
-	
-		&:hover {
-			transform: translateY(-1px);
-		}
-	
-		&:active {
-			transform: translateY(1px);
 		}
 	}
 }

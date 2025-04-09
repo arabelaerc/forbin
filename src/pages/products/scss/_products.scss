@@ -358,7 +358,7 @@
 			i.tag {
 				left: 10px;
 				bottom: 50%;
-				font-size: 12px;
+				font-size: 11px;
 				color: white;
 				padding: 2px 20px;
 				font-style: normal;
@@ -368,6 +368,11 @@
 
 				@include responsive-width($laptop_s) {
 					bottom: 40%;
+					font-size: 12px;
+				}
+
+				@include responsive-width($laptop_m) {
+					bottom: 44%;
 				}
 			}
 
@@ -382,28 +387,18 @@
 
 	.products__bottom {
 		text-align: center;
-		margin-top: 30px;
+		margin-top: 50px;
 
 		@include responsive-width($laptop-s) {
-			margin-top: 50px;
+			margin-top: 80px;
 		}
 
-		.download-btn {
+		.button {
 			gap: 10px;
 			height: 54px;
-			padding: 0 24px;
-			align-items: center;
-			display: inline-flex;
-			border-radius: 12px;
-			border: 1px solid #000;
-			justify-content: center;
-			transition: all .3s;
+			max-width: 356px;
 
 			&:hover {
-				color: #fff;
-				background-color: #285BEA;
-				transform: translateY(-1px);
-				border-color: #285BEA;
 
 				svg {
 					path {
@@ -411,13 +406,17 @@
 					}
 				}
 			}
-		
-			&:active {
-				transform: translateY(1px);
-			}
 
 			svg {
 				transition: all .3s;
+
+				path {
+					stroke: #fff;
+
+					@include responsive-width($laptop-s) {
+						stroke: #000;
+					}
+				}
 			}
 		}
 	}

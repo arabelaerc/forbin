@@ -39,7 +39,7 @@
             flex-direction: column;
             justify-content: center;
             background-color: white;
-            border: 0.29px solid black;
+            border: 1px solid black;
 
             @include responsive-width($mobile_l) {
                 width: 174px;

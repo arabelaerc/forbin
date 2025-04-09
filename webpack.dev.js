@@ -1,3 +1,4 @@
+const path = require('path');
 const {merge} = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -13,6 +14,10 @@ module.exports = merge(common, {
     open: true, // Abre automáticamente el navegador
     // host: '127.0.0.1', // Forzar IPv4
     host: '0.0.0.0', // Forzar IPv4
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    historyApiFallback: true,
   },
 
   plugins: [

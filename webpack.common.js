@@ -12,6 +12,7 @@ module.exports = {
         // filename: 'bundle.js',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+		publicPath: '/',
         clean: true, // Limpia la carpeta "dist" antes de cada build
     },
     plugins: [
