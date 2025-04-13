@@ -69,7 +69,8 @@
 		line-height: 0;
 		align-items: center;
 		justify-content: center;
-		content: image-url('icons/icon-arrow-swiper.svg');
+		// content: image-url('icons/icon-arrow-swiper.svg');
+		content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxNiAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNCAyTDIuMzE3NzYgMTEuMzYyOUMxLjg5NDA4IDExLjcwMjQgMS44OTQwOCAxMi4yOTc2IDIuMzE3NzYgMTIuNjM3MUwxNCAyMiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPg0KPC9zdmc+DQo=")
 	}
 
 	&.swiper-button-disabled {
@@ -79,7 +80,8 @@
 			pointer-events: all !important;
 			// border: 2px solid #CACACA;
 			background-color: transparent;
-			content: image-url('icons/icon-arrow-swiper-disabled.svg');
+			// content: image-url('icons/icon-arrow-swiper-disabled.svg');
+			content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxNiAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNCAyTDIuMzE3NzYgMTEuMzYyOUMxLjg5NDA4IDExLjcwMjQgMS44OTQwOCAxMi4yOTc2IDIuMzE3NzYgMTIuNjM3MUwxNCAyMiIgc3Ryb2tlPSIjNjY2NjY2IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+DQo8L3N2Zz4NCg==")
 		}
 	}
 

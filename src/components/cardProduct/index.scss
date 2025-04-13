@@ -13,7 +13,7 @@
 	border: 1px solid #666;
 
 	@include responsive-width($laptop-s) {
-		height: 320px;
+		height: 345px;
 		max-width: 320px;
 	}
 	
